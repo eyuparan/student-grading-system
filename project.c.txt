@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+//tek bir for dongusundede hepsini toplayabilirdik;
+int en_kucuk_notu_bul(int not[10]){
+int en_b,en_k,i,toplam; float arit_ort;
+en_b=not[0];
+en_k=not[0];
+for(i=0;i<10;i++){
+if(en_k>=not[i]){
+en_k=not[i];
+}
+}
+for(i=0;i<10;i++){
+if(en_b<=not[i]){
+en_b=not[i];
+}
+}
+toplam=0;
+for(i=0;i<10;i++){
+toplam+=not[i];
+arit_ort=toplam/10.0;
+}
+for(i=0;i<10;i++){
+if(not[i]<arit_ort){
+printf("%d notu kaldi\n",not[i]);
+}
+}
+printf("en buyuk not:%d\n",en_b);
+printf("en kucuk not:%d\n",en_k);
+printf("bu not dizisi icindeki notlarin toplami:%d\n",toplam);
+printf("bu tum notlarin aritmatik ortalamasi:%2f\n",arit_ort);
+return 3;
+}
+int main()
+{
+//burada fonksiyonun içine sadece not yazdım cünkü karışıklık olabilir
+int not[10],i;
+printf("10 elemanlik bir dizinin 10 elemani giriniz:\n");
+for(i=0;i<10;i++){
+scanf("%d",&not[i]);
+}
+en_kucuk_notu_bul(not);
+return 0;
+}
+//bitiş
